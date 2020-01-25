@@ -1,5 +1,8 @@
+from data import read_data
+
+
 def main():
-    print('init')
+    read_data();
 
 
 if __name__ == '__main__':

@@ -6,8 +6,9 @@ number_re = re.compile(r'[0-9]+')
 new_line_re = re.compile(r'\r\n')
 new_line2_re = re.compile(r'\n\n')
 
-def read_data():
-    data = pd.read_csv('dane.csv')
+
+def read_data(file_name):
+    data = pd.read_csv(file_name)
     genre_counts = data[data['Genre'] != 'unknown']['Genre'].value_counts()
 
     popular_genre = []

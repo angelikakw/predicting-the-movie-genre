@@ -21,3 +21,4 @@ Instalowanie paczek:
     pip install –r requirements.txt
 
 
+Do uruchomienia programu konieczne jest pobranie danych ze strony Kaggle, nazwanie ich 'dane.csv' i umieszczenie w folderze z projektem. 

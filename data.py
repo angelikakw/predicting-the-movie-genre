@@ -1,10 +1,10 @@
 import pandas as pd
 import re
 
-przypis_re = re.compile(r'\[[0-9]+\]')
-number_re = re.compile(r'[0-9]+')
-new_line_re = re.compile(r'\r\n')
-new_line2_re = re.compile(r'\n\n')
+FOORNOTE_RE = re.compile(r'\[[0-9]+\]')
+NUMBER_RE = re.compile(r'[0-9]+')
+NEW_LINE_RE = re.compile(r'\r\n')
+NEW_LINE_2_RE = re.compile(r'\n\n')
 
 
 def read_data(file_name):
@@ -30,25 +30,25 @@ def read_data(file_name):
 
 def clean(plot):
     plot = re.sub(
-        przypis_re,
+        FOORNOTE_RE,
         '',
         plot
     )
 
     plot = re.sub(
-        new_line_re,
+        NEW_LINE_RE,
         ' ',
         plot
     )
 
     plot = re.sub(
-        new_line2_re,
+        NEW_LINE_2_RE,
         ' ',
         plot
     )
 
     plot = re.sub(
-        number_re,
+        NUMBER_RE,
         ' ',
         plot
     )

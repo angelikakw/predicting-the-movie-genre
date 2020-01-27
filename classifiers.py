@@ -12,9 +12,9 @@ def do_logistic_regression(popular_genre_with_plot_rnd, plot):
     tv, train_x_vectorized, test_x_vectorized, train_y, test_y = tf_idf(popular_genre_with_plot_rnd, None)
     lr = LogisticRegression(class_weight='balanced')
     lr.fit(train_x_vectorized, train_y)
-    print(lr.score(test_x_vectorized, test_y))
+    # print(lr.score(test_x_vectorized, test_y))
     lr.predict(tv.transform([clean(plot)]))
-    print(Counter(lr.predict(train_x_vectorized)).most_common())
+    return Counter(lr.predict(train_x_vectorized)).most_common(1)
 
 
 def do_naive_bayes(popular_genre_with_plot_rnd, plot):

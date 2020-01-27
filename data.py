@@ -1,13 +1,23 @@
 import pandas as pd
 import re
+import os
 
-FOORNOTE_RE = re.compile(r'\[[0-9]+\]')
+FOOTNOTE_RE = re.compile(r'\[[0-9]+\]')
 NUMBER_RE = re.compile(r'[0-9]+')
 NEW_LINE_RE = re.compile(r'\r\n')
 NEW_LINE_2_RE = re.compile(r'\n\n')
 
 
 def read_data(file_name):
+
+    """Reading and limiting data to the 100 most common genres"""
+
+    if not os.path.isfile(file_name):
+        raise ValueError("No file")
+
+    if not file_name[-3:] == 'csv':
+        raise ValueError("No csv")
+
     data = pd.read_csv(file_name)
     genre_counts = data[data['Genre'] != 'unknown']['Genre'].value_counts()
 
@@ -30,7 +40,7 @@ def read_data(file_name):
 
 def clean(plot):
     plot = re.sub(
-        FOORNOTE_RE,
+        FOOTNOTE_RE,
         '',
         plot
     )

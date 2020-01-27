@@ -8,9 +8,13 @@ def main():
 
     popular_genre_with_plot_rnd = read_data('dane.csv')
 
-    # do_logistic_regression(popular_genre_with_plot_rnd, plot1)
-    # do_naive_bayes(popular_genre_with_plot_rnd, plot1)
-    # do_boosting(popular_genre_with_plot_rnd, plot1)
+    genre_lr = do_logistic_regression(popular_genre_with_plot_rnd, plot1)
+    genre_nb = do_naive_bayes(popular_genre_with_plot_rnd, plot1)
+    genre_b = do_boosting(popular_genre_with_plot_rnd, plot1)
+
+    print("Gatunek regresja logistyczcna: ", genre_lr)
+    print("Gatunek naiwny Bayes: ", genre_nb)
+    print("Gatunek boosting: ", genre_b)
 
 
 if __name__ == '__main__':

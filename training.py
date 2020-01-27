@@ -20,6 +20,9 @@ def split_a_set(popular_genre_with_plot_rnd):
 
 
 def tf_idf(popular_genre_with_plot_rnd, max_features_value):
+
+    """ Function calculate term frequency–inverse document frequency (TF-IDF) """
+
     train_x_cleaned, test_x_cleaned, train_y, test_y = split_a_set(popular_genre_with_plot_rnd)
     tv = TfidfVectorizer(max_features=max_features_value)
     tv.fit(np.concatenate((train_x_cleaned.values, test_x_cleaned.values)))

@@ -5,3 +5,19 @@ Skorzystano z metody text miningu, jaką jest ważenie termów (TF-IDF). Czynnik
 Program wyznacza skuteczność poszczególnych klasyfikatorów i efekty na rzeczywistych przykładach. Możliwe klasyfikatory to regresja logistyczna, naiwny Bayes oraz boosting.
 
 Program posiada prosty interfejs graficzny.
+
+
+
+Tworzenie środowiska wirtualnego:
+
+  /usr/bin/python3 -m venv nazwa_srodowiska
+
+Uruchamianie środowiska wirtualnego:
+
+  source nazwa_srodowiska/bin/activate
+
+Instalowanie paczek:
+
+  pip install –r requirements.txt
+
+

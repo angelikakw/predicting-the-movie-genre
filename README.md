@@ -10,14 +10,14 @@ Program posiada prosty interfejs graficzny.
 
 Tworzenie środowiska wirtualnego:
 
-  /usr/bin/python3 -m venv nazwa_srodowiska
+    /usr/bin/python3 -m venv nazwa_srodowiska
 
 Uruchamianie środowiska wirtualnego:
 
-  source nazwa_srodowiska/bin/activate
+    source nazwa_srodowiska/bin/activate
 
 Instalowanie paczek:
 
-  pip install –r requirements.txt
+    pip install –r requirements.txt
 
 

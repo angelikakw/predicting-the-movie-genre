@@ -1,4 +1,4 @@
-from classifiers import do_logistic_regression, do_naive_bayes, do_boosting
+from classifiers import do_logistic_regression, do_naive_bayes, do_boosting, predict_by_logistic_regression
 from data import read_data
 
 
@@ -8,7 +8,8 @@ def main():
 
     popular_genre_with_plot_rnd = read_data('dane.csv')
 
-    genre_lr = do_logistic_regression(popular_genre_with_plot_rnd, plot1)
+    lr, tv, _ = do_logistic_regression(popular_genre_with_plot_rnd)
+    genre_lr = predict_by_logistic_regression(lr, tv, plot1)
     genre_nb = do_naive_bayes(popular_genre_with_plot_rnd, plot1)
     genre_b = do_boosting(popular_genre_with_plot_rnd, plot1)
 

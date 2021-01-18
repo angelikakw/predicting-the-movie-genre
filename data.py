@@ -64,3 +64,4 @@ def clean(plot):
     )
 
     return plot.replace('\'', '')
+

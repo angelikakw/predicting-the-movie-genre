@@ -8,13 +8,16 @@ from xgboost import XGBClassifier
 from training import tf_idf
 
 
-def do_logistic_regression(popular_genre_with_plot_rnd, plot):
+def do_logistic_regression(popular_genre_with_plot_rnd):
     tv, train_x_vectorized, test_x_vectorized, train_y, test_y = tf_idf(popular_genre_with_plot_rnd, None)
     lr = LogisticRegression(class_weight='balanced')
     lr.fit(train_x_vectorized, train_y)
     print('Skuteczność regresji logistycznej: {0:.2f}%'.format((lr.score(test_x_vectorized, test_y) * 100)))
-    lr.predict(tv.transform([clean(plot)]))
-    genre, _ = Counter(lr.predict(train_x_vectorized)).most_common(1)[0]
+    return lr, tv, train_x_vectorized
+
+
+def predict_by_logistic_regression(lr, tv, plot):
+    genre, _ = Counter(lr.predict(tv.transform([clean(plot)]))).most_common(1)[0]
     return genre
 
 

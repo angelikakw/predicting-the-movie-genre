@@ -1,5 +1,5 @@
 attrs==19.3.0
-joblib==0.14.1
+joblib==1.2.0
 more-itertools==8.1.0
 numpy==1.18.1
 packaging==20.1
